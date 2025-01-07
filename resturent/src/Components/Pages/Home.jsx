@@ -30,6 +30,14 @@ import Ngalley from './Photo2/ngalley.png';
 import Diagonal from './Photo2/diogonal.png';
 import Kitoko from './Photo2/kitoko.png';
 
+import Banner from './Photo2/banner.png';
+
+import Leslie from './Photo2/leslie.png';
+import Chris from './Photo2/chris.png';
+import Jojo from './Photo2/jojo.png';
+import Arrow from './Photo2/arrow3.png'
+
+
 function Home() {
 
   const images = [
@@ -111,6 +119,23 @@ function Home() {
       image: Kitoko ,
     }
    ];
+
+
+   const Slider = [
+    {
+      id:1,
+      one: Leslie,
+      tow: Chris,
+      three:Jojo,
+    }
+        
+   ];
+   const goToPrevious = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+  };
+
+
+  const currentYear = new Date().getFullYear();
 
 
 
@@ -195,6 +220,81 @@ function Home() {
         <h2 className=' pt-12 pb-4 text-4xl text-[#1E1E1E]'>Discover more cool restaurants</h2>
         <h2 className='  text-white bg-[#1677BD] px-10 py-4 rounded-full hover:bg-slate-900 '>Show more</h2>
         </div>
+
+
+        <div className='flex sm:flex-row flex-col bg-[#F2F2F2] lg:px-[300px] justify-center items-center lg:gap-20 py-14 px-8 gap-12 sm:px-20' >
+          <div className='flex flex-col items-center lg:gap-16 gap-6'>
+            <h2 className='font-bold lg:text-5xl sm:text-2xl'>MyFeedback for Business has resources to help you plan, start, grow, and advertise your small business</h2>
+            <p className='text-[#5E5E5E] lg:text-3xl sm:text-base'>The lorem ipsum is, in printing, a series of meaningless words used temporarily to calibrate a layout.</p>
+            <button className='bg-black text-white px-4 py-2 rounded-full hover:bg-slate-700'>Explore MyFeedback business</button>
+          </div>
+          <img src={Banner} alt="" className='lg:w-[1600px] sm:w-[400px] w-[320px] transition ease-in-out hover:-translate-y-1 hover:scale-110' />
+        </div>
+
+
+        <div className='sm:py-16 lg:px-16 sm:px-[43px] px-5 py-10'>
+          <h2 className='font-bold sm:text-4xl sm:py-4'>Recents avtivities</h2>
+        <div className='flex items-center'>
+          {Slider.map((slide) => (
+            <div key={slide.id} className='flex lg:gap-[100px] sm:gap-8 gap-3'>
+              <img src={slide.one} alt="" className='lg:w-[700px] sm:w-[250px] w-[100px] transition ease-in-out hover:-translate-y-1 hover:scale-110' />
+              <img src={slide.tow} alt="" className='lg:w-[700px] sm:w-[250px] w-[100px] transition ease-in-out hover:-translate-y-1 hover:scale-110' />
+              <img src={slide.three} alt="" className='lg:w-[700px] sm:w-[250px] w-[100px] transition ease-in-out hover:-translate-y-1 hover:scale-110' />
+            </div>
+          ))};
+          <img src={Arrow} alt="" className='sm:w-16 sm:h-20 w-10 h-12' />
+          
+        </div>
+        </div>
+
+
+
+        <div className='flex justify-between lg:px-[500px] py-14 sm:px-24 px-8 border-t'>
+          <div>
+            <h2 className='font-bold sm:text-xl text-sm'>About</h2>
+            <h3 className='sm:text-base text-[8px] text-[#5E5E5E]'>About MyFeedback</h3>
+            <h3 className='sm:text-base text-[8px] text-[#5E5E5E]'>Investor Relations</h3>
+          </div>
+
+          <div>
+            <h2 className='font-bold sm:text-xl text-sm'>MyFeedback</h2>
+            <h3 className='sm:text-base text-[8px] text-[#5E5E5E]'>MyFeedback for business</h3>
+            <h3 className='sm:text-base text-[8px] text-[#5E5E5E]'>Collections</h3>
+            <h3 className='sm:text-base text-[8px] text-[#5E5E5E]'>Events</h3>
+            <h3 className='sm:text-base text-[8px] text-[#5E5E5E]'>MyFeedback blog</h3>
+            <h3 className='sm:text-base text-[8px] text-[#5E5E5E]'>Support</h3>
+            <h3 className='sm:text-base text-[8px] text-[#5E5E5E]'>Developers</h3>
+          </div>
+
+          <div>
+          <div className='flex flex-col'>
+          <label for="lang" className='font-bold sm:text-xl text-sm'>Languages</label>
+          <select id="lang" name="lang">
+            <option value="english">English</option>
+            <option value="spanish">Spanish</option>
+            <option value="hindi">Hindi</option>
+            <option value="bangla">Bangla</option>
+          </select>
+          </div>
+
+          <div className='flex flex-col'>
+          <label for="country" className='font-bold sm:text-xl text-sm'>Countries</label>
+          <select id="country" name="country">
+            <option value="singapour">Singapour</option>
+            <option value="italy">Italy</option>
+            <option value="uae">UAE</option>
+            <option value="hongkong">Hongkong</option>
+          </select>
+          </div>
+
+          </div>
+
+        </div>
+
+
+        <footer className=" text-black pt-4 pb-12 text-center font-bold">
+      <p>Copyright&copy; {currentYear}  myfeedback, designed by scott</p>
+    </footer>
       
     </>
   )
