@@ -6,7 +6,14 @@ export default {
     
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundPosition: {
+        'custom': '50% 95%',
+        'customTow': '50% 93%',
+        'customThree': '50% 90%',
+
+      }
+    },
   },
   plugins: [],
 }
