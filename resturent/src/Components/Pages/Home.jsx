@@ -268,8 +268,8 @@ function Home() {
 
           <div>
           <div className='flex flex-col'>
-          <label for="lang" className='font-bold sm:text-xl text-sm'>Languages</label>
-          <select id="lang" name="lang">
+          <label htmlFor="lang" className='font-bold sm:text-xl text-sm'>Languages</label>
+          <select id="lang" name="lang" type="text" autoComplete='given-name'>
             <option value="english">English</option>
             <option value="spanish">Spanish</option>
             <option value="hindi">Hindi</option>
@@ -278,8 +278,8 @@ function Home() {
           </div>
 
           <div className='flex flex-col'>
-          <label for="country" className='font-bold sm:text-xl text-sm'>Countries</label>
-          <select id="country" name="country">
+          <label htmlFor="country" className='font-bold sm:text-xl text-sm'>Countries</label>
+          <select id="country" name="country" type="text" autoComplete='given-name'>
             <option value="singapour">Singapour</option>
             <option value="italy">Italy</option>
             <option value="uae">UAE</option>
